@@ -1,0 +1,350 @@
+/* Layout base */
+.layout {
+  background-color: #0a0a0a;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Isso garante que a página ocupe toda a altura da tela */
+}
+
+/* Reset básico para remover margens/paddings nativos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 4rem;
+  background-color: #0a0a0a;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.nav-buttons a {
+  margin-left: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-buttons a:hover {
+  color: #f8b122;
+}
+
+/* Main content */
+.main-content {
+  padding: 0 2rem;
+  flex-grow: 1; /* Faz com que o conteúdo principal ocupe o restante do espaço disponível */
+}
+
+/* Título de boas-vindas */
+.welcome-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 6.5rem;
+  color: #fff;
+}
+
+/* Placeholder para vídeo */
+.video-placeholder {
+  width: 80%;
+  height: 400px;
+  margin: 4rem auto;
+  background-color: #333;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 1.2rem;
+  border: 2px dashed #666;
+}
+
+/* Bloco texto + imagem */
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  gap: 2rem;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-name {
+  font-size: 3rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.highlight-red {
+  color: #f5443d;
+}
+
+.highlight-yellow {
+  color: #f8b122;
+}
+
+.intro-description {
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  color: #ccc;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.intro-subtext {
+  display: block;
+  margin-top: 1rem;
+}
+
+.intro-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.intro-button {
+  background-color: #fff;
+  color: #0a0a0a;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border: 1px solid #0a0a0a;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.intro-button:hover {
+  background-color: #f8b122;
+  color: #0a0a0a;
+  transform: scale(1.1);
+}
+
+.intro-image-placeholder {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  border: 2px dashed #666;
+  border-radius: 12px;
+  height: 500px;
+  width: 200px;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Sessão de links */
+.AboutInicial {
+  margin-top: 10rem;
+}
+
+.more-title {
+  color: #fff;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.links-group {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+}
+
+.section-link {
+  color: #f8b122;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.section-link:hover {
+  color: #f5443d;
+}
+
+.separator {
+  color: #f8b122;
+}
+
+/* Carousel */
+.video-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+  position: relative;
+}
+
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.carousel-arrow:hover {
+  color: #f8b122;
+}
+
+/* Footer */
+.footer {
+  background-color: #0a0a0a;
+  color: #ccc;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto; /* Isso empurra o footer para o fim da página */
+}
+
+.footer-info {
+  font-size: 1rem;
+}
+
+.social-icons a {
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.social-icons svg {
+  transition: fill 0.3s;
+}
+
+.social-icons a:hover svg {
+  fill: #f8b122;
+}
+/* Ajustando o Carousel */
+.video-carousel {
+  display: flex;
+  overflow-x: hidden;  /* Remove a barra de rolagem horizontal */
+  scroll-behavior: smooth;
+  width: 90%;  /* Ajuste de largura */
+  margin: 0 auto;
+  padding: 2rem 0;
+  gap: 2rem;  /* Espaçamento entre os vídeos */
+  position: relative;  /* Posicionamento relativo para controle do alinhamento */
+}
+
+/* Card de vídeo */
+.video-card {
+  min-width: 350px;  /* Tamanho mínimo do card */
+  height: 350px;  /* Tornando o card quadrado */
+  background-color: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00000080;
+  transition: transform 0.3s, opacity 0.5s ease-out;  /* Transições para efeito de escurecimento */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.6;  /* Os vídeos inicialmente ficam mais escuros */
+}
+
+/* Efeito hover no card de vídeo */
+.video-card:hover {
+  transform: scale(1.05);
+  opacity: 1;  /* Fica mais claro ao passar o mouse */
+}
+
+/* Vídeo centralizado (vídeo 1) */
+.video-card:first-child {
+  opacity: 1;  /* Garantir que o primeiro vídeo seja totalmente visível */
+}
+
+/* Restante dos vídeos deslocados para a direita */
+.video-card:not(:first-child) {
+  opacity: 0.6;  /* Mantém os outros vídeos mais escuros */
+}
+
+/* Placeholder para o vídeo */
+.video-frame {
+  width: 100%;
+  height: 100%;  /* Faz o vídeo ocupar 100% da altura do card */
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.2rem;
+  border-radius: 12px;  /* Borda arredondada */
+}
+
+/* Descrição do vídeo */
+.video-description {
+  padding: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Scroll control */
+.video-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.carousel-arrow:hover {
+  color: #f8b122;
+}
+
+/* Alinhamento dos vídeos */
+.video-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Forçando centralização do primeiro vídeo */
+.video-carousel .video-card:first-child {
+  transform: translateX(0);  /* Centraliza o primeiro vídeo */
+  opacity: 1;
+}
+
+/* Videos fora de vista */
+.video-carousel .video-card:not(:first-child) {
+  transform: translateX(150%);  /* Move os outros vídeos para a direita */
+  opacity: 0.6;
+}
