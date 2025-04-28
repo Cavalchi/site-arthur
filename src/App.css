@@ -190,161 +190,38 @@ html, body {
 .separator {
   color: #f8b122;
 }
-
-/* Carousel */
-.video-carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 4rem 0;
-  position: relative;
-}
-
-.carousel-arrow {
-  background: none;
-  border: none;
-  font-size: 3rem;
-  color: #fff;
-  cursor: pointer;
-  padding: 1rem;
-}
-
-.carousel-arrow:hover {
-  color: #f8b122;
-}
-
-/* Footer */
 .footer {
   background-color: #0a0a0a;
-  color: #ccc;
-  padding: 2rem;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  margin-top: auto; /* Isso empurra o footer para o fim da página */
+  padding: 1rem 4rem;
 }
 
 .footer-info {
   font-size: 1rem;
 }
 
-.social-icons a {
-  margin-left: 1rem;
-  display: inline-block;
-}
-
-.social-icons svg {
-  transition: fill 0.3s;
-}
-
-.social-icons a:hover svg {
-  fill: #f8b122;
-}
-/* Ajustando o Carousel */
-.video-carousel {
-  display: flex;
-  overflow-x: hidden;  /* Remove a barra de rolagem horizontal */
-  scroll-behavior: smooth;
-  width: 90%;  /* Ajuste de largura */
-  margin: 0 auto;
-  padding: 2rem 0;
-  gap: 2rem;  /* Espaçamento entre os vídeos */
-  position: relative;  /* Posicionamento relativo para controle do alinhamento */
-}
-
-/* Card de vídeo */
-.video-card {
-  min-width: 350px;  /* Tamanho mínimo do card */
-  height: 350px;  /* Tornando o card quadrado */
-  background-color: #222;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 10px #00000080;
-  transition: transform 0.3s, opacity 0.5s ease-out;  /* Transições para efeito de escurecimento */
+.footer a {
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  opacity: 0.6;  /* Os vídeos inicialmente ficam mais escuros */
+  text-decoration: none;
 }
 
-/* Efeito hover no card de vídeo */
-.video-card:hover {
-  transform: scale(1.05);
-  opacity: 1;  /* Fica mais claro ao passar o mouse */
-}
-
-/* Vídeo centralizado (vídeo 1) */
-.video-card:first-child {
-  opacity: 1;  /* Garantir que o primeiro vídeo seja totalmente visível */
-}
-
-/* Restante dos vídeos deslocados para a direita */
-.video-card:not(:first-child) {
-  opacity: 0.6;  /* Mantém os outros vídeos mais escuros */
-}
-
-/* Placeholder para o vídeo */
-.video-frame {
-  width: 100%;
-  height: 100%;  /* Faz o vídeo ocupar 100% da altura do card */
-  background-color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  font-size: 1.2rem;
-  border-radius: 12px;  /* Borda arredondada */
-}
-
-/* Descrição do vídeo */
-.video-description {
-  padding: 1rem;
-  font-size: 1.1rem;
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-}
-
-/* Scroll control */
-.video-carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.carousel-arrow {
-  background: none;
-  border: none;
-  font-size: 3rem;
-  color: #fff;
-  cursor: pointer;
-  padding: 1rem;
-  z-index: 10;
-}
-
-.carousel-arrow:hover {
+.footer a:hover {
   color: #f8b122;
+  transform: scale(1.1);
 }
 
-/* Alinhamento dos vídeos */
-.video-carousel {
+.social-icons {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
-/* Forçando centralização do primeiro vídeo */
-.video-carousel .video-card:first-child {
-  transform: translateX(0);  /* Centraliza o primeiro vídeo */
-  opacity: 1;
-}
+.social-icons a svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 
-/* Videos fora de vista */
-.video-carousel .video-card:not(:first-child) {
-  transform: translateX(150%);  /* Move os outros vídeos para a direita */
-  opacity: 0.6;
+  transition: color 0.3s;
 }

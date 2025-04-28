@@ -1,54 +1,40 @@
-import React, { useRef, useState, useImperativeHandle, forwardRef, useEffect } from 'react';
+import { useRef, useState, useImperativeHandle, forwardRef, useEffect } from 'react';
+import './VideoCarousel.css';
 
-// Definindo os tipos para o ref
 interface VideoCarouselHandles {
   scrollLeft: () => void;
   scrollRight: () => void;
 }
 
 const VideoCarousel = forwardRef<VideoCarouselHandles, unknown>((_, ref) => {
-  const carouselRef = useRef<HTMLDivElement | null>(null); // Tipando o ref
-  const [currentIndex, setCurrentIndex] = useState<number>(0); // Tipando o estado
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  // Expondo os métodos scrollLeft e scrollRight para o componente pai
   useImperativeHandle(ref, () => ({
     scrollLeft: () => {
-      if (currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1);
-      } else {
-        setCurrentIndex(4); // Voltar ao último vídeo
-      }
+      setCurrentIndex((prev) => (prev === 0 ? 4 : prev - 1));
     },
     scrollRight: () => {
-      if (currentIndex < 4) {
-        setCurrentIndex(currentIndex + 1);
-      } else {
-        setCurrentIndex(0); // Voltar ao primeiro vídeo
-      }
+      setCurrentIndex((prev) => (prev === 4 ? 0 : prev + 1));
     }
   }));
 
-  // Função para rolar para o vídeo específico
-  const scrollToVideo = (index: number) => {
-    const videoWidth = 350; // Largura do vídeo
-    const offset = index * videoWidth;
-    if (carouselRef.current) {
-      carouselRef.current.scrollTo({
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (carousel) {
+      const offset = carousel.offsetWidth * currentIndex;
+      carousel.scrollTo({
         left: offset,
         behavior: 'smooth'
       });
     }
-  };
-
-  // Atualiza a posição do carrossel com base no índice
-  useEffect(() => {
-    scrollToVideo(currentIndex);
   }, [currentIndex]);
 
   return (
+    <div className="carousel-container">
     <div className="video-carousel" ref={carouselRef}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <div key={i} className="video-card">
+        <div key={i} className={`video-card ${currentIndex === i - 1 ? 'active' : ''}`}>
           <div className="video-frame">
             <p className="video-title">Vídeo {i}</p>
           </div>
@@ -57,6 +43,7 @@ const VideoCarousel = forwardRef<VideoCarouselHandles, unknown>((_, ref) => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 });
