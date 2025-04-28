@@ -1,9 +1,16 @@
-import React, { useRef, useImperativeHandle, forwardRef, useState } from 'react';
+import React, { useRef, useState, useImperativeHandle, forwardRef, useEffect } from 'react';
 
-const VideoCarousel = forwardRef((_, ref) => {
-  const carouselRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+// Definindo os tipos para o ref
+interface VideoCarouselHandles {
+  scrollLeft: () => void;
+  scrollRight: () => void;
+}
 
+const VideoCarousel = forwardRef<VideoCarouselHandles, unknown>((_, ref) => {
+  const carouselRef = useRef<HTMLDivElement | null>(null); // Tipando o ref
+  const [currentIndex, setCurrentIndex] = useState<number>(0); // Tipando o estado
+
+  // Expondo os métodos scrollLeft e scrollRight para o componente pai
   useImperativeHandle(ref, () => ({
     scrollLeft: () => {
       if (currentIndex > 0) {
@@ -21,18 +28,20 @@ const VideoCarousel = forwardRef((_, ref) => {
     }
   }));
 
-  // Atualiza a posição do carrossel com base no índice
-  const scrollToVideo = (index) => {
+  // Função para rolar para o vídeo específico
+  const scrollToVideo = (index: number) => {
     const videoWidth = 350; // Largura do vídeo
     const offset = index * videoWidth;
-    carouselRef.current.scrollTo({
-      left: offset,
-      behavior: 'smooth'
-    });
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({
+        left: offset,
+        behavior: 'smooth'
+      });
+    }
   };
 
-  // Chama a função para scroll quando o índice mudar
-  React.useEffect(() => {
+  // Atualiza a posição do carrossel com base no índice
+  useEffect(() => {
     scrollToVideo(currentIndex);
   }, [currentIndex]);
 
