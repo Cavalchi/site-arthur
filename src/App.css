@@ -39,15 +39,19 @@ html, body {
 }
 
 .nav-buttons a {
+  display: inline-block;
   margin-left: 1.5rem;
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.3s;
 }
 
 .nav-buttons a:hover {
   color: #f8b122;
+  transform: scale(1.1);
 }
+
 
 /* Main content */
 .main-content {
@@ -97,6 +101,7 @@ html, body {
   font-size: 3rem;
   line-height: 1.2;
   text-align: center;
+  
 }
 
 .highlight-red {
@@ -106,6 +111,18 @@ html, body {
 .highlight-yellow {
   color: #f8b122;
 }
+.highlight-red,
+.highlight-yellow {
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.highlight-red:hover,
+.highlight-yellow:hover {
+  transform: scale(1.1);
+}
+
+
 
 .intro-description {
   font-size: 1.2rem;
@@ -151,6 +168,7 @@ html, body {
   border-radius: 12px; 
   transition: filter 1s ease;  
   overflow: hidden;
+
 }
 
 .intro-image-placeholder img {
@@ -159,10 +177,15 @@ html, body {
   object-fit: cover;
   filter: grayscale(100%);
   border-radius: 12px;
+  transition: all 0.5s;
+  display: inline-block;
 }
 
 .intro-image-placeholder img:hover {
   filter: grayscale(0%);
+  transition: all 0.5s;
+  border-radius: 12px;
+  width: 90%;
 }
 
 
@@ -190,10 +213,14 @@ html, body {
   margin: 0 1rem;
   font-weight: bold;
   transition: color 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
 }
 
 .section-link:hover {
   color: #f5443d;
+  transform: scale(01.1);
+  transition: all 0.3s;
 }
 
 .separator {
