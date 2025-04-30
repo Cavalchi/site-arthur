@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import './App.css';
 import VideoCarousel from './components/VideoCarousel.tsx';
+import arthurImage from './images/arthur_micheloto.jpg';
+
 
 function App() {
   // Tipando o ref corretamente para VideoCarousel
@@ -56,14 +58,15 @@ function App() {
 
             <div className="intro-button-wrapper">
               <button className="intro-button">
-                Conheça mais de mim
+                Conheça mais sobre mim
               </button>
             </div>
           </div>
 
           <div className="intro-image-placeholder">
-            Imagem Arthur (logo temporário)
+            <img src={arthurImage} alt="Arthur Micheloto" />
           </div>
+
         </div>
 
         <div className="AboutInicial">

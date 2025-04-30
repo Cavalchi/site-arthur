@@ -148,14 +148,23 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222;
-  border: 2px dashed #666;
-  border-radius: 12px;
-  height: 500px;
-  width: 200px;
-  color: #666;
-  font-size: 1rem;
+  border-radius: 12px; 
+  transition: filter 1s ease;  
+  overflow: hidden;
 }
+
+.intro-image-placeholder img {
+  height: 100%;
+  width: 80%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border-radius: 12px;
+}
+
+.intro-image-placeholder img:hover {
+  filter: grayscale(0%);
+}
+
 
 /* Sessão de links */
 .AboutInicial {
