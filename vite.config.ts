@@ -8,7 +8,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),      // página inicial
-        cinema: path.resolve(__dirname, 'src/cinema/cinema.html'),    // nova página no src/cinema
       },
     },
   },
