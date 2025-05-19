@@ -29,7 +29,7 @@ function App() {
             element={
               <main className="main-content">
                 <h2 className="welcome-title">Bem-vindo!</h2>
-
+                  <div className="video-placeholder">Espaço reservado para o vídeo</div>
                 <div className="intro-section">
                   <div className="intro-text">
                     <h2 className="intro-name">
