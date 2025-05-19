@@ -19,7 +19,7 @@ function Cinema() {
   
     <div className="image-card">
       <img src={Zap} alt="Resquícios" />
-      <div className="image-title">ZapBens</div>
+      <div className="image-title">ZapBenz</div>
     </div>
   
     <div className="image-card">

@@ -1,28 +1,14 @@
-import { useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
-import VideoCarousel from './components/VideoCarousel.tsx';
+import { FaLinkedin, FaVimeoV, FaBehance } from 'react-icons/fa';
+import VideoCarousel from './components/VideoCarousel';
 import arthurImage from './images/arthur_micheloto.jpg';
-import Cinema from './cinema.tsx';
-import Publicidade from './publicidade.tsx';
-import Televisao from './televisao.tsx';
-import About from './about.tsx';
+import Cinema from './cinema';
+import Publicidade from './publicidade';
+import Televisao from './televisao';
+import About from './about';
 
 function App() {
-  const carouselRef = useRef<{ scrollLeft: () => void; scrollRight: () => void }>(null);
-
-  const handleScrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft();
-    }
-  };
-
-  const handleScrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollRight();
-    }
-  };
-
   return (
     <Router>
       <div className="layout">
@@ -32,7 +18,7 @@ function App() {
             <Link to="/">Início</Link>
             <Link to="/cinema">Cinema</Link>
             <Link to="/publicidade">Publicidade</Link>
-            <Link to="/televisao">Televisão</Link> {/* Corrigido aqui */}
+            <Link to="/televisao">Televisão</Link>
             <Link to="/about">Sobre mim</Link>
           </nav>
         </header>
@@ -43,8 +29,6 @@ function App() {
             element={
               <main className="main-content">
                 <h2 className="welcome-title">Bem-vindo!</h2>
-
-                <div className="video-placeholder">Espaço reservado para o vídeo</div>
 
                 <div className="intro-section">
                   <div className="intro-text">
@@ -81,24 +65,19 @@ function App() {
                     <span className="separator"> - </span>
                     <Link to="/publicidade" className="section-link">Publicidade</Link>
                     <span className="separator"> - </span>
-                    <Link to="/televisao" className="section-link">TV</Link> {/* Corrigido aqui */}
+                    <Link to="/televisao" className="section-link">TV</Link>
                   </h2>
                 </div>
 
-                {/* Carrossel de vídeos */}
-                <div className="video-carousel-wrapper">
-                  <button className="carousel-arrow left" onClick={handleScrollLeft}>‹</button>
-                  <div className="carousel-container">
-                    <VideoCarousel ref={carouselRef} />
-                  </div>
-                  <button className="carousel-arrow right" onClick={handleScrollRight}>›</button>
+                <div className="carousel-container">
+                  <VideoCarousel />
                 </div>
               </main>
             }
           />
           <Route path="/cinema" element={<Cinema />} />
           <Route path="/publicidade" element={<Publicidade />} />
-          <Route path="/televisao" element={<Televisao />} /> {/* Corrigido aqui */}
+          <Route path="/televisao" element={<Televisao />} />
           <Route path="/about" element={<About />} />
         </Routes>
 
@@ -106,15 +85,16 @@ function App() {
           <div className="footer-info">© 2025 Arthur Micheloto</div>
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/arthur-micheloto-9429b419a/?originalSubdomain=br" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              {/* SVG do LinkedIn */}
+              <FaLinkedin />
             </a>
             <a href="https://vimeo.com/arthurmicheloto" target="_blank" rel="noopener noreferrer" aria-label="Vimeo">
-              {/* SVG do Vimeo */}
+              <FaVimeoV />
             </a>
             <a href="https://www.behance.net/arthurmicheloto1" target="_blank" rel="noopener noreferrer" aria-label="Behance">
-              {/* SVG do Behance */}
+              <FaBehance />
             </a>
           </div>
+
         </footer>
       </div>
     </Router>
