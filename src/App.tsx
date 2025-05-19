@@ -36,7 +36,6 @@ function App() {
                       Me chamo <span className="highlight-red">Arthur Micheloto</span><br />
                       e sou <span className="highlight-yellow">Editor e Colorista</span>
                     </h2>
-
                     <h1 className="intro-description">
                       Cinéfilo com muita vontade de aprender e experimentar,<br />
                       o meu principal objetivo é somar em seu projeto. <br />

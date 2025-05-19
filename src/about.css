@@ -9,21 +9,29 @@
   /* Centralizando o título principal */
   .Title {
     font-size: 2rem;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     text-align: center;
     color: #fff;
   }
   
+  .Michaelkahn{
+    font-size: 2em;
+    color: #fff;
+    font-family: 'DM Serif Display', serif;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+  }
   /* Centralizando a citação */
   .Sub {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 10px;
-    font-style: italic;
     text-align: center;
     color: #fff;
   }
   
-  /* Layout do conteúdo (Imagem + Texto) */
+
   .about-content {
     display: flex;
     justify-content: space-between;
@@ -38,12 +46,9 @@
   
   .arthur-img {
     width: 100%;
-    max-width: 400px; /* Ajuste para o tamanho da imagem */
+    max-width: 700px; /* Ajuste para o tamanho da imagem */
     border-radius: 8px;
     object-fit: cover; /* Mantém a proporção da imagem */
-  }
-
-  .arthur-img img {
     height: 100%;
     width: 80%;
     object-fit: cover;
@@ -51,15 +56,29 @@
     border-radius: 12px;
     transition: all 0.5s;
     display: inline-block;
+    padding-top: 9em;
   }
+
+  .arthur-img:hover {
+  filter: grayscale(0%);
+  transition: all 0.5s;
+  border-radius: 12px;
+  width: 100%;
+}
   
-  .arthur-img img:hover {
-    filter: grayscale(0%);
-    transition: all 0.5s;
-    border-radius: 12px;
-    width: 90%;
-  }
-  
+h2.Sub {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem; 
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+
+  color: #fff;
+  text-align: center;
+}
+
+
   
   .text-container {
     flex: 2;
@@ -68,17 +87,19 @@
   }
   
   .Name {
+    margin-top: 2em;
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 2em;
     color: #fff;
   }
   
   .description {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.6;
     text-align: left;
     color: #fff;
+    margin-bottom: 2em;
   }
   
   /* Responsividade para telas menores */
