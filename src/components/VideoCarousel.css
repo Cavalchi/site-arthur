@@ -64,3 +64,150 @@ iframe {
   height: 100%;
   border: none;
 }
+/* ========== RESPONSIVIDADE DO CARROSSEL ========== */
+
+@media (max-width: 1440px) {
+  .carousel-wrapper {
+    padding: 0 300px;
+  }
+
+  .carousel-cell,
+  .video-frame {
+    width: 600px !important;
+    height: 500px;
+  }
+
+  .btn-prev {
+    left: 100px;
+  }
+
+  .btn-next {
+    right: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .carousel-wrapper {
+    padding: 0 200px;
+  }
+
+  .carousel-cell,
+  .video-frame {
+    width: 500px !important;
+    height: 420px;
+  }
+
+  .btn-prev {
+    left: 70px;
+  }
+
+  .btn-next {
+    right: 70px;
+  }
+
+  .btn-prev,
+  .btn-next {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .video-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-wrapper {
+    padding: 0 100px;
+  }
+
+  .carousel-cell,
+  .video-frame {
+    width: 420px !important;
+    height: 350px;
+  }
+
+  .btn-prev {
+    left: 50px;
+  }
+
+  .btn-next {
+    right: 50px;
+  }
+
+  .btn-prev,
+  .btn-next {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+
+  .video-title {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 0 40px;
+  }
+
+  .carousel-cell,
+  .video-frame {
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .btn-prev,
+  .btn-next {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .btn-prev {
+    left: 10px;
+  }
+
+  .btn-next {
+    right: 10px;
+  }
+
+  .video-title {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    padding: 0 10px;
+  }
+
+  .carousel-cell,
+  .video-frame {
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .btn-prev,
+  .btn-next {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .btn-prev {
+    left: 5px;
+  }
+
+  .btn-next {
+    right: 5px;
+  }
+
+  .video-title {
+    font-size: 13px;
+  }
+}

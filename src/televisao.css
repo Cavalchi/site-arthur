@@ -43,48 +43,4 @@ body {
     justify-content: center;
     align-items: center; /* Garante alinhamento vertical dos elementos */
   }
-  
-  .image-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 60%;
-  }
-  
-  .image-card img {
-    width: 100%;
-    height: auto;
-    transition: filter 0.5s ease;
-    display: block;
-  }
-  
-  /* Filtro grayscale no hover */
-  .image-card:hover img {
-    filter: grayscale(100%);
-  }
-  
-  /* Título centralizado e com efeito suave de transição */
-  .image-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%);
-    color: white;
-    font-size: 2rem;
-    font-family: 'DM Serif Display', serif;
-    padding: 10px 20px;
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    white-space: nowrap;
-    text-shadow: 1px 1px 1px #000000, 0 0 3px #000;
-  }
-  
-  /* Aparece suavemente no centro da imagem */
-  .image-card:hover .image-title {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  
+
