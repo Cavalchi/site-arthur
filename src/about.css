@@ -7,7 +7,7 @@
   }
   
   /* Centralizando o título principal */
-  .Title {
+.Title {
     font-size: 2rem;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -15,7 +15,7 @@
     color: #fff;
   }
   
-  .Michaelkahn{
+.Michaelkahn{
     font-size: 2em;
     color: #fff;
     font-family: 'DM Serif Display', serif;
@@ -24,7 +24,7 @@
     text-align: center;
   }
   /* Centralizando a citação */
-  .Sub {
+.Sub {
     font-size: 2rem;
     margin-top: 10px;
     text-align: center;
@@ -32,19 +32,19 @@
   }
   
 
-  .about-content {
+.about-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
   }
   
-  .img-container {
+.img-container {
     flex: 1;
     padding-right: 20px;
   }
   
-  .arthur-img {
+.arthur-img {
     width: 100%;
     max-width: 700px; /* Ajuste para o tamanho da imagem */
     border-radius: 8px;
@@ -59,7 +59,7 @@
     padding-top: 9em;
   }
 
-  .arthur-img:hover {
+.arthur-img:hover {
   filter: grayscale(0%);
   transition: all 0.5s;
   border-radius: 12px;
@@ -73,32 +73,167 @@ h2.Sub {
   line-height: 1.2;
   letter-spacing: 0.5px;
   margin-top: 20px;
-
   color: #fff;
   text-align: center;
 }  
-  .text-container {
+.text-container {
     flex: 2;
     text-align: left;
     padding-left: 20px;
   }
   
-  .Name {
+.Name {
     margin-top: 2em;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 2em;
     color: #fff;
   }
-  
-  .description {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    text-align: left;
-    color: #fff;
-    margin-bottom: 2em;
-  }
-  
+ 
+.description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  text-align: left;
+  color: #fff;
+  margin-bottom: 2em;
+}
+
+
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 18px 22px;
+  font-size: 16px;
+  border: 1px solid #aaa; /* borda mais fina */
+  border-radius: 30px;
+  background-color: #000000;
+  outline: none;
+  color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: none;
+  border-radius: 20px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #ffffff;
+  transition: opacity 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f5443d;
+}
+
+.contato{
+  font-family: 'DM Serif Display', serif;
+  color: aliceblue;
+  padding-top: 3em;
+  font-size: 3em;
+  font-weight: normal;
+
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 54px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 36px;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #f8b122;
+  left: -2px;
+  transform: translateX(90%);
+  transition: all 0.3s ease-out;
+  z-index: 1;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  border: 1px solid #f8b122;
+  border-radius: 36px;
+  z-index: 2;
+}
+
+.button:hover::before {
+  transform: translateX(0%);
+}
+
+.button:hover .text,
+.button:hover .icon svg {
+  color: #000; /* texto e ícone pretos no hover */
+}
+
+.text {
+  white-space: nowrap;
+  line-height: 1.2;
+  padding-inline-end: 44px;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.icon {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 54px;
+  height: 54px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #f8b122;
+  z-index: 2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon svg {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
   /* Responsividade para telas menores */
   @media (max-width: 768px) {
     .about-content {
